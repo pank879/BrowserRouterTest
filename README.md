@@ -46,7 +46,7 @@ React, MobX, React-Router and Webpack boilerplate with async routes. This boiler
 #### Clone this repo
 
 ```
-$ git clone https://github.com/alexdevero/react-mobx-react-router-boilerplate.git
+$ git clone https://github.com/pank879/BrowserRouterTest.git
 ```
 
 #### Install dependencies
