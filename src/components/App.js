@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route, Link, withRouter} from 'react-router-dom';
+import {Route, Link, withRouter,Switch} from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import LazyRoute from 'lazy-route';
 import DevTools from 'mobx-react-devtools';
@@ -38,6 +38,7 @@ export default class App extends Component {
 		return (
 			<div className='wrapper'>
 				<Header location={this.props.routing.location} />
+
 				<Route
 					exact
 					path='/'
@@ -69,7 +70,6 @@ export default class App extends Component {
 						<LazyRoute {...props} component={import('./Login')} />
 					)}
 				/>
-
 				<Footer />
 			</div>
 		);

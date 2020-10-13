@@ -10,7 +10,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    publicPath: './',
+    publicPath: '/visitorself/',
     filename: 'assets/[name].[hash].js',
     chunkFilename: 'assets/[name].[chunkhash].js'
   },
@@ -98,7 +98,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       hash: false,
-      template: './index.hbs'
+      template: './index.html'
     })
   ]
 };

@@ -1,7 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+console.log('path--------------->'+path.resolve(__dirname, 'dist'));
+//path--------------->D:\cr2\react2020\react-mobx-react-router-boilerplate\dist
 module.exports = {
   entry: [
     'react-hot-loader/patch',
@@ -13,16 +14,19 @@ module.exports = {
   ],
   devServer: {
     hot: true,
-    contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: path.resolve(__dirname, 'dist'), // for static file.
     port: process.env.PORT || 3097,
     host: 'localhost',
     publicPath: '/',
     historyApiFallback: true,
-    disableHostCheck: true
+    disableHostCheck: true,
+    allowedHosts: [
+      'localhost:9000'
+    ]
   },
   output: {
-    path: path.join(__dirname, 'dist'),
-    publicPath: '/',
+    path: path.resolve('./'),
+    publicPath: '/visitorself/',
     filename: 'app.[hash].js'
   },
   devtool: 'eval',
@@ -97,7 +101,7 @@ module.exports = {
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({ hash: false, template: './index.hbs' }),
+    new HtmlWebpackPlugin({ hash: false, template: './index.html' }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /nb/)
   ]
 };

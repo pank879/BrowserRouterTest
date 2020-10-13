@@ -1,4 +1,5 @@
-const webApiUrl = "http://3.18.137.216:8098/api/visitor/security";
+//const webApiUrl = "http://3.18.137.216:8098/api/visitor/security";
+const webApiUrl = "http://localhost:9000/floormapapi/api/visitor/security";
 /*http://3.18.137.216:8098*/
 
 class CountryService {
